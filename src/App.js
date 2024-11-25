@@ -3,6 +3,7 @@ import Navbar from './components/NavBar';
 import ProductList from './components/ProductList';
 import AddProductButton from './components/AddProductButton';
 import ProductModal from './components/ProductModal';
+import HeadLine from './components/HeadLine';
 function App() {
   const [products, setProducts] = useState([]);
   const [isModalOpen, setModalOpen] = useState(false);
@@ -37,6 +38,7 @@ function App() {
         >
           Add Products
         </h1>
+        {/* <HeadLine/> */}
         <ProductList
           products={products}
           setProducts={updateProducts}
