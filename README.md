@@ -61,7 +61,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/c
 
 ### Deployment
 
-This project is hosted on Vercel : https://product-manager-mwyffue04-ramkarmakar12s-projects.vercel.app/
+This project is hosted on Vercel : https://product-manager-tau.vercel.app/
 
 and Netlify : https://product-manager-monkcommerce.netlify.app/
 
