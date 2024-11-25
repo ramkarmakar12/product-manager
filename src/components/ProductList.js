@@ -1,9 +1,8 @@
-import React , {useState,useEffect} from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import ProductCard from "./ProductCard";
+import React, { useState, useEffect } from 'react';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import ProductCard from './ProductCard';
 
-function ProductList({ products, setProducts , onClick}) {
-
+function ProductList({ products, setProducts, onClick }) {
   // const []
   const handleDragEnd = (result) => {
     if (!result.destination) return;
@@ -36,35 +35,54 @@ function ProductList({ products, setProducts , onClick}) {
                 index={index}
               >
                 {(provided) => (
-                  <div 
+                  <div
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      marginBottom: "10px",
-                      background: "#f9f9f9",
-                      padding: "10px",
-                      borderRadius: "5px",
-                      gap: "10px", // Ensures consistent spacing between handle and content
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '10px',
+                      // background: '#f9f9f9',
+                      padding: '10px',
+                      borderRadius: '5px',
+                      // gap: '10px', // Ensures consistent spacing between handle and content
+                      marginLeft: '380px' // new
                     }}
                   >
                     <span
                       {...provided.dragHandleProps}
-                      style={{ cursor: "grab", marginRight: "10px" ,     alignSelf: "center", // Ensures alignment within flex container
+                      style={{
+                        cursor: 'grab',
+                        marginRight: '10px',
+                        display : "flex",
+                        alignItems: "flex-end", // Ensures alignment within flex container
+                        justifyContent: "flex-end",
+                         paddingBottom : "16px"
+                        
                       }}
                     >
                       ☰
                     </span>
-                    <div style={{ flex: 1 }}>
-                    <ProductCard
-                      product={product}
-                      onUpdate={(updatedProduct) =>
-                        updateProduct(index, updatedProduct)
-                      }
-                      onRemove={() => removeProduct(index)}
-                    />
-                      </div>
+                    <span
+                      style={{
+                        // fontWeight: 'bold',
+                        marginRight: '10px',
+                        fontSize: '16px',
+                        paddingBottom : "14px"
+                      }}
+                    >
+                      {index + 1}.
+                    </span>
+                    <div style={{ flex: 1 , width: "60%" , marginRight: "390px" }}>
+                      <ProductCard
+                        product={product}
+                        onUpdate={(updatedProduct) =>
+                          updateProduct(index, updatedProduct)
+                        }
+                        onRemove={() => removeProduct(index)}
+                      />
+                    </div>
                   </div>
                 )}
               </Draggable>
