@@ -39,11 +39,7 @@ function ProductCard({ product, onUpdate, onRemove }) {
     const filtered = products.filter((product) =>
       product.title.toLowerCase().includes(query)
     );
-    /*
-    if(searchQuery ==''){
-      return true;
-    }
-    */
+
     console.log('searched for', e.target.value);
 
     setFilteredProducts(filtered);
@@ -58,18 +54,6 @@ function ProductCard({ product, onUpdate, onRemove }) {
           : [...prevSelected, productId] // Add if not selected
     );
   };
-  /*
-  // Toggle variant selection
-  const toggleVariantSelection = (variantId) => {
-    setSelectedVariants(
-      (prevSelected) =>
-        prevSelected.includes(variantId)
-          ? prevSelected.filter((id) => id !== variantId) // Remove if already selected
-          : [...prevSelected, variantId] // Add if not selected
-    );
-    setSelectedVariant(product.variant);
-  };
-*/
 
   const toggleVariantSelection = (variantId, variantName) => {
     setSelectedVariants((prevSelected) => {
@@ -98,22 +82,6 @@ function ProductCard({ product, onUpdate, onRemove }) {
       { ...product, discount: '20', discountType: '% Off' },
     ]);
   };
-  const handleUpdate = () => {
-    onUpdate({ ...product, name, discount });
-  };
-
-  // Remove a product from the list
-  const handleRemoveProduct = (index) => {
-    setSelectedProducts((prev) => prev.filter((_, i) => i !== index));
-  };
-
-  // Toggle variants visibility
-  const toggleVariants = (index) => {
-    setShowVariants((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
 
   // Handle discount updates
   const handleDiscountChange = (index, field, value) => {
@@ -137,11 +105,6 @@ function ProductCard({ product, onUpdate, onRemove }) {
     setSearchQuery('');
   };
 
-  const handleProductSelect = (selectedProduct) => {
-    setName(selectedProduct.name); // Update the input with the selected product name
-    handleCloseModal();
-  };
-
   const fetchAndSetProducts = async () => {
     setLoading(true);
     const data = await fetchProducts(); // Call fetchProducts from api.js
@@ -149,15 +112,10 @@ function ProductCard({ product, onUpdate, onRemove }) {
     setFilteredProducts(data); // Initialize the filtered list
     setLoading(false);
   };
-  /*
-  useEffect( () => {
-    fetchAndSetProducts(searchQuery,1,10); // Fetch products when the component mounts
-  }, [searchQuery]);
-  */
 
   return (
     <>
-      <HeadLine />
+      {/* <HeadLine /> */}
       <div>
         <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
           <div style={{ width: ' 450px' }}>

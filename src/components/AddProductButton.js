@@ -16,7 +16,8 @@ function AddProductButton({ onAddProduct, disabled }) {
         borderRadius: "4px",
         cursor: disabled ? "not-allowed" : "pointer",
         marginTop: "10px",
-        fontWeight: "bold"
+        fontWeight: "bold",
+        marginLeft : " 360px"
       }}
     >
       Add Product

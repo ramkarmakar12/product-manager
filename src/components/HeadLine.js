@@ -3,7 +3,7 @@ import React from 'react'
 function HeadLine() {
   return (
     <>
-      <div style={{ display: "flex" , justifyContent : "center" , alignItems: "center", width : "550px"}}>
+      <div style={{ display: "flex" , justifyContent : "center" , alignItems: "center", width : "580px"}}>
      {/* Heading for Product */}
      <h3 
       style={{
@@ -11,11 +11,11 @@ function HeadLine() {
         padding: '0',
         fontSize: '18px',
         fontWeight: 'bold',
-        marginBottom: '10px',
+        marginBottom: '5px',
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        marginLeft : "720px",
+        marginLeft : "780px",
         marginRight : '170px'
       }}
     >

@@ -5,7 +5,7 @@ import AddProductButton from './components/AddProductButton';
 import ProductModal from './components/ProductModal';
 import HeadLine from './components/HeadLine';
 function App() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([{ id: Date.now(), name: '', discount: null }]);
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -29,16 +29,17 @@ function App() {
     <div className="App">
       <Navbar />
       <div style={{ padding: '20px 50px ', fontFamily: 'Arial' }}>
-        <h1
+        <h2
           style={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            marginRight : "200px"
           }}
         >
           Add Products
-        </h1>
-        {/* <HeadLine/> */}
+        </h2>
+        <HeadLine/>
         <ProductList
           products={products}
           setProducts={updateProducts}
